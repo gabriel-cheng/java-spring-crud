@@ -34,5 +34,12 @@ public class ProductController {
 
         return ResponseEntity.ok().build();
     }
+
+    @DeleteMapping
+    public ResponseEntity deleteProduct(@RequestParam String id) {
+        Object productFinded = repository.findById(id);
+    
+        return ResponseEntity.ok(productFinded);
+    }
     
 }
